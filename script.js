@@ -1,27 +1,16 @@
-async function createLobby() {
-  const response = await fetch('createLobby.php');
-
-    const data = await response.json();
-    if (data.success) {
-      window.location.href = `lobby.php?code=${data.code}`;
-
-    } else {
-        alert('Could not create lobby.');
-    }
-}
-
-
-  async function joinLobby() {
-    const code = document.getElementById("joinCode").value.trim().toUpperCase();
-    const res = await fetch(`join_lobby.php?code=${code}`);
-    const data = await res.json();
-    if (data.success) {
-      window.location.href = `lobby.php?code=${data.code}`;
-      alert("Joined lobby successfully.");
-    } else {
-      alert("Lobby not found.");
+async function updatePlayerCount() {
+    try {
+      const res = await fetch('get_user_count.php');
+      const data = await res.json();
+      document.getElementById('playerCount').textContent = data.count;
+    } catch (err) {
+      console.error('Failed to get player count:', err);
+      document.getElementById('playerCount').textContent = 'Error';
     }
   }
-
-  fetch('createLobby.php')
-  fetch('game.php')
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    updatePlayerCount();
+    setInterval(updatePlayerCount, 5000); // update every 5 sec
+  });
+  
