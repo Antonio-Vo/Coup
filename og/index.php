@@ -7,7 +7,7 @@ include 'track_user.php';
   <title>Coup Home</title>
 </head>
 <body>
-  <h1>Welcome to Coup Online</h1>
+  <h1>Welcome to Deposition</h1>
   <p>Players Online: <span id="playerCount">Loading...</span></p>
 
   <script src="script.js" defer></script>
