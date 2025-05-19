@@ -2,8 +2,8 @@
 // — common header: connect to your DB
 $db = new PDO(
   'mysql:sql304.byethost31.com;dbname=b31_38711838_coup_lobby;charset=utf8mb4',
-  'db_user',
-  'db_pass',
+  '	b31_38711838',
+  'Class2025',
   [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
 
