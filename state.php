@@ -14,8 +14,9 @@ $userId = $_COOKIE['lobby_user_id'];
 
 // 4. Database connection (adjust creds to your setup)
 $db = new PDO(
-  'mysql:host=sql304.byethost31.com;dbname=b31_38711838_coup_lobby;charset=utf8mb4;charset=utf8mb4',
+  'mysql:sql304.byethost31.com;dbname=b31_38711838_coup_lobby;charset=utf8mb4',
   'db_user',
   'db_pass',
   [PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION]
 );
+
