@@ -1,3 +1,8 @@
+if (!localStorage.getItem('playerId')) {
+  localStorage.setItem('playerId', crypto.randomUUID());
+}
+const playerId = localStorage.getItem('playerId');
+
 function updateUI(state) {
   const slots = document.getElementById('slots');
   slots.innerHTML = '';
@@ -11,7 +16,7 @@ function updateUI(state) {
         fetch('api/join.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, slot: index })
+          body: JSON.stringify({ name, slot: index, playerId })
         }).then(() => loadState());
       };
     }
@@ -23,10 +28,15 @@ function updateUI(state) {
 }
 
 function loadState() {
-  fetch('api/state.php')
+  fetch('api/state.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ playerId })
+  })
     .then(res => res.json())
     .then(updateUI);
 }
 
 setInterval(loadState, 1000);
 loadState();
+z

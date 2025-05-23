@@ -1,0 +1,31 @@
+{
+    "players": [
+        {
+            "name": "ew",
+            "id": null,
+            "lastSeen": 1748004838
+        },
+        {
+            "name": "wew",
+            "id": null,
+            "lastSeen": 1748004838
+        },
+        {
+            "name": "ewew",
+            "id": null,
+            "lastSeen": 1748004838
+        },
+        {
+            "name": "wewewew",
+            "id": null,
+            "lastSeen": 1748004838
+        }
+    ],
+    "log": [
+        "ew joined slot 1",
+        "wew joined slot 2",
+        "ewew joined slot 3",
+        "wewewew joined slot 4"
+    ],
+    "turn": 0
+}
