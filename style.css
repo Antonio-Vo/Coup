@@ -1,0 +1,15 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#slots div {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  width: 200px;
+  cursor: pointer;
+}
+
+#slots div:hover {
+  background-color: #f0f0f0;
+}
