@@ -20,6 +20,20 @@ function updateUI(state) {
         }).then(() => loadState());
       };
     }
+    // Highlight the current player's turn
+    if (index === state.currentTurn) {
+      div.style.background = '#dff0d8';
+      if (player.id === playerId) {
+        // Enable action buttons for this player
+        // e.g., document.getElementById('incomeBtn').disabled = false;
+      }
+    } else {
+      div.style.opacity = 0.5;
+      if (player.id === playerId) {
+        // Disable action buttons for this player
+        // e.g., document.getElementById('incomeBtn').disabled = true;
+      }
+    }
     slots.appendChild(div);
   });
 
@@ -37,10 +51,10 @@ function loadState() {
     .then(updateUI);
 }
 
+document.getElementById('start').onclick = function() {
+  fetch('api/start.php', { method: 'POST' }).then(() => loadState());
+};
+
 setInterval(loadState, 1000);
 loadState();
 
- let playerOneCoins = 2;
- let playerTwoCoins = 2;
- let playerThreeCoins = 2;
- let playerFourCoins = 2;

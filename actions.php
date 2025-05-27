@@ -1,5 +1,20 @@
 <?php
 // actions taken while it is player's turn
+
+function advanceTurn(&$state) {
+    $numPlayers = 0;
+    foreach ($state['players'] as $player) {
+        if (!empty($player['id'])) {
+            $numPlayers++;
+        }
+    }
+    if ($numPlayers === 0) return;
+    $state = json_decode(file_get_contents($stateFile), true);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        throw new Exception("Failed to decode JSON: " . json_last_error_msg());
+    }
+}
+
 function income($playerId) {
     $stateFile = __DIR__ . '/state.json';
     $state = json_decode(file_get_contents($stateFile), true);
@@ -12,10 +27,12 @@ function income($playerId) {
             $player['coins'] += 1;
             $state['log'][] = $player['name'] . " took Income (+1 coin)";
             break;
-                break;
             }
         }
-    
+    $result = file_put_contents($stateFile, json_encode($state, JSON_PRETTY_PRINT));
+    if ($result === false) {
+        throw new Exception("Failed to save state to file: $stateFile");
+    }
     }
     
     file_put_contents($stateFile, json_encode($state, JSON_PRETTY_PRINT));
@@ -37,10 +54,7 @@ foreach ($state['players'] as &$player) {
         }
     }
 
-if (!$playerFound) {
-    $state['log'][] = "Error: Player with ID $playerId not found.";
-}
-    }
+advanceTurn($state);
 }
 
 function coup(){
