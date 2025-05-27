@@ -39,4 +39,8 @@ function loadState() {
 
 setInterval(loadState, 1000);
 loadState();
-z
+
+ let playerOneCoins = 2;
+ let playerTwoCoins = 2;
+ let playerThreeCoins = 2;
+ let playerFourCoins = 2;

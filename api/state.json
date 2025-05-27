@@ -3,27 +3,34 @@
         {
             "name": null,
             "id": null,
-            "lastSeen": null
+            "lastSeen": null,
+            "coins": null,
+            "cards": null
         },
         {
             "name": null,
             "id": null,
-            "lastSeen": null
+            "lastSeen": null,
+            "coins": null,
+            "cards": null
         },
         {
             "name": null,
             "id": null,
-            "lastSeen": null
+            "lastSeen": null,
+            "coins": null,
+            "cards": null
         },
         {
             "name": null,
             "id": null,
-            "lastSeen": null
+            "lastSeen": null,
+            "coins": null,
+            "cards": [null, null]
         }
     ],
     "log": [
-        "sd timed out",
-        " timed out"
+
     ],
     "turn": 0
 }
