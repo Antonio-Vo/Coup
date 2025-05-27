@@ -1,31 +1,29 @@
 {
     "players": [
         {
-            "name": "ew",
+            "name": null,
             "id": null,
-            "lastSeen": 1748004838
+            "lastSeen": null
         },
         {
-            "name": "wew",
+            "name": null,
             "id": null,
-            "lastSeen": 1748004838
+            "lastSeen": null
         },
         {
-            "name": "ewew",
+            "name": null,
             "id": null,
-            "lastSeen": 1748004838
+            "lastSeen": null
         },
         {
-            "name": "wewewew",
+            "name": null,
             "id": null,
-            "lastSeen": 1748004838
+            "lastSeen": null
         }
     ],
     "log": [
-        "ew joined slot 1",
-        "wew joined slot 2",
-        "ewew joined slot 3",
-        "wewewew joined slot 4"
+        "sd timed out",
+        " timed out"
     ],
     "turn": 0
 }
